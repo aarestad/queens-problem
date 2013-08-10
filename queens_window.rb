@@ -7,8 +7,8 @@ class QueensWindow < Gosu::Window
   WHITE = 0xffffffff
   RED = 0xffff0000
 
-  module Z
-    Background, Square, Piece = (1..100).to_a
+  module ZIndex
+    BACKGROUND, SQUARE, PIECE = (1..100).to_a
   end
 
   def initialize(board_size, num_queens, square_size, line_width)
@@ -30,7 +30,7 @@ class QueensWindow < Gosu::Window
         @board_size_pixels, 0, WHITE,
         0, @board_size_pixels, WHITE,
         @board_size_pixels, @board_size_pixels, WHITE,
-        Z::Background)
+        ZIndex::BACKGROUND)
 
     (0..@board_size-1).each do |row|
       (0..@board_size-1).each do |col|
@@ -43,12 +43,12 @@ class QueensWindow < Gosu::Window
             @square_offset * row + @square_size, @square_offset * col, square_color,
             @square_offset * row, @square_offset * col + @square_size, square_color,
             @square_offset * row + @square_size, @square_offset * col + @square_size, square_color,
-            Z::Square)
+            ZIndex::SQUARE)
       end
     end
 
     @board.queens.each do |queen_x, queen_y|
-      @queen.draw(queen_x * @square_offset + 4, queen_y * @square_offset + 3, Z::Piece)
+      @queen.draw(queen_x * @square_offset + 4, queen_y * @square_offset + 3, ZIndex::PIECE)
     end
   end
 
