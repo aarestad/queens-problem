@@ -1,4 +1,4 @@
-require './board'
+require '../board'
 
 describe Board do
     describe "a new board" do
