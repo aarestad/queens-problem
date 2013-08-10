@@ -1,8 +1,8 @@
 require '../board'
 
 describe Board do
-  describe "a new board" do
-    it "should have no queens and no attacked squares" do
+  describe 'a new board' do
+    it 'should have no queens and no attacked squares' do
       board = Board.new 8, 8
       board.queens.length.should == 0
 
@@ -14,8 +14,8 @@ describe Board do
     end
   end
 
-  describe "adding queens" do
-    it "should add a queen at the correct place" do
+  describe 'adding queens' do
+    it 'should add a queen at the correct place' do
       board = Board.new 3, 1
       board.queens.length.should == 0
 
@@ -25,7 +25,7 @@ describe Board do
       board.queen_here?(1, 0).should be true
     end
 
-    it "should not let you add more queens than specified" do
+    it 'should not let you add more queens than specified' do
       board = Board.new 3, 0
       board.queens.length.should == 0
 
@@ -33,7 +33,7 @@ describe Board do
       board.queens.length.should == 0
     end
 
-    it "should update the attacked squares" do
+    it 'should update the attacked squares' do
       board = Board.new 3, 1
 
       (0..2).each do |row|
@@ -52,8 +52,8 @@ describe Board do
     end
   end
 
-  describe "#all_squares_attacked?" do
-    it "should report true or false correctly" do
+  describe '#all_squares_attacked?' do
+    it 'should report true or false correctly' do
       board = Board.new 3, 1
       board.all_squares_attacked?.should be false
 
