@@ -20,7 +20,7 @@ class QueensWindow < Gosu::Window
     super(@board_size_pixels, @board_size_pixels, false)
     self.caption = 'Queens Problem'
 
-    @queen = Gosu::Image.new(self, 'queen.png', true)
+    @queen = Gosu::Image.new('queen.png', {:tileable => true})
     @board = Board.new(board_size, num_queens)
   end
 
