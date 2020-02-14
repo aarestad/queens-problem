@@ -55,7 +55,11 @@ class QueensWindow < Gosu::Window
   def button_down(id)
     case id
       when Gosu::MsLeft
-        @board.add_queen((self.mouse_x / @square_offset).to_i, (self.mouse_y / @square_offset).to_i)
+        x = (self.mouse_x / @square_offset).to_i
+        y = (self.mouse_y / @square_offset).to_i
+
+        (!@board.square_attacked?(x, y) || @board.queen_here?(x, y)) && @board.add_queen(x, y)
+        #@board.add_queen((self.mouse_x / @square_offset).to_i, (self.mouse_y / @square_offset).to_i)
       else
     end
   end

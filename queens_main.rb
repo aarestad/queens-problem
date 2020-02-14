@@ -1,4 +1,4 @@
-#!/usr/local/bin/ruby -w
+#!/usr/local/opt/ruby/bin/ruby -w
 
 require './queens_window'
 
