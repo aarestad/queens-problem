@@ -54,7 +54,7 @@ class QueensWindow < Gosu::Window
 
   def button_down(id)
     case id
-      when Gosu::MsLeft
+      when Gosu::MS_LEFT
         x = (self.mouse_x / @square_offset).to_i
         y = (self.mouse_y / @square_offset).to_i
 
